@@ -4,12 +4,18 @@ import PropTypes from 'prop-types';
 // import { connect } from 'react-redux';
 // import { reduxSelector, reduxActionCreator } from '../../../redux/exampleRedux.js';
 
-// import styles from './MainLayout.module.scss';
+import styles from './MainLayout.module.scss';
+
+import {Header} from '../Header/Header';
+import {Footer} from '../Footer/Footer';
 
 const Component = ({children}) => (
-  <div>
-    <h2>MainLayout</h2>
-    {children}
+  <div className = {styles.component}>
+    <Header/>
+    <main>
+      {children}
+    </main>
+    <Footer/>
   </div>
 );
 

@@ -1,0 +1,51 @@
+@import '../../../styles/settings.scss';
+
+.component {
+  background-color: $dark;
+  min-height: 80px;
+  @include flex(center, center);
+
+  a {
+    text-decoration: none;
+
+    &:visited {
+      text-decoration: none;
+    }
+
+    &:hover {
+      text-decoration: none;
+    }
+
+    &:active{
+      text-decoration: none;
+    }
+  }
+
+  .logo {
+
+    color: $light;
+
+    .name {
+      color: $light;
+      font-family: $font-header;
+      font-size: $header-size;
+      text-transform: uppercase;
+
+      &:hover {
+        color: $main-3;
+      }
+    }
+  }
+
+  .icon {
+    color: $light;
+    &:hover {
+      color: $main-2;
+    }
+  }
+
+  .nav {
+    background-color: green;
+    width: 100%;
+  }
+}

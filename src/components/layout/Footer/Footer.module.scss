@@ -1,0 +1,14 @@
+@import '../../../styles/settings.scss';
+
+.component {
+  background-color: $dark;
+  min-height: 80px;
+  @include flex(center, center);
+
+  div {
+    color: $light;
+    font-family: $font-header;
+    font-size: $base-size;
+    text-transform: uppercase;
+  }
+}
