@@ -1,32 +1,45 @@
 import React from 'react';
-// import PropTypes from 'prop-types';
-
-// import { connect } from 'react-redux';
-// import { reduxSelector, reduxActionCreator } from '../../../redux/exampleRedux.js';
-
 import styles from './Hero.module.scss';
 
+const backgrounds = [
+  {
+    color: '#fb4e68',
+  },
+  {
+    color: '#fdb410',
+  },
+  {
+    color: '#1ec0b1',
+  },
+  {
+    color: '#1188f5',
+  },
+];
+
 const Component = () => (
+
   <div className={styles.component}>
-    <h2>Hero</h2>
+    <div className={styles.colors}>
+      {backgrounds.map(background => (
+      // eslint-disable-next-line react/jsx-key
+        <div
+          className={styles.stripe}
+          style={{
+            backgroundColor: background.color,
+          }}>
+        </div>
+      ))}
+    </div>
+    <div className={styles.overlay}>
+      <h1>Choose your color</h1>
+    </div>
   </div>
 );
 
 Component.propTypes = {
 };
 
-// const mapStateToProps = state => ({
-//   someProp: reduxSelector(state),
-// });
-
-// const mapDispatchToProps = dispatch => ({
-//   someAction: arg => dispatch(reduxActionCreator(arg)),
-// });
-
-// const Container = connect(mapStateToProps, mapDispatchToProps)(Component);
-
 export {
   Component as Hero,
-  // Container as Hero,
   Component as HeroComponent,
 };

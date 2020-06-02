@@ -1,4 +1,36 @@
 @import '../../../styles/settings.scss';
 
-// .component {
-// }
+.component {
+  width: 100%;
+  height: calc(100vh - 80px);
+  background-color: red;
+  position: relative;
+
+  .colors {
+    width: 100%;
+    height: 100%;
+    @include flex (center, center);
+  }
+
+  .stripe {
+    flex: 0 25%;
+    width: 100%;
+    height: 100%;
+  }
+
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(to bottom right, rgba(235,235,235,0.3), rgba(235,235,235,0.1));
+    @include flex (center, center);
+
+    h1 {
+      text-align: center;
+      color: $light;
+      font-size: 5em;
+    }
+  }
+}

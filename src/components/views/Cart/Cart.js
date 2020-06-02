@@ -6,10 +6,17 @@ import PropTypes from 'prop-types';
 
 import styles from './Cart.module.scss';
 
+import { Grid, Row, Col } from 'react-flexbox-grid';
+
 const Component = ({children}) => (
   <div className={styles.component}>
-    <h2>Cart</h2>
-    {children}
+    <Grid>
+      <Row>
+        <Col>
+        sfds
+        </Col>
+      </Row>
+    </Grid>
   </div>
 );
 

@@ -1,0 +1,66 @@
+@import '../../../styles/settings.scss';
+
+.component {
+  margin-bottom: 20px;
+
+  a {
+    color: $dark;
+    text-decoration: none;
+  }
+
+  .product {
+    padding: 10px;
+    // border: 0.5px solid $dark;
+    background-color: $light;
+  }
+
+  .color {
+    width: 100%;
+    padding-top: 100%;
+    position: relative;
+  }
+
+  .features {
+    text-align: left;
+
+    h4 {
+      margin: 0px;
+      padding: 0;
+    }
+
+    p {
+      margin-top: 0px;
+      margin-bottom: 0px;
+      padding: 0;
+    }
+
+    .name{
+      margin-top: 7px;
+      text-transform: uppercase;
+    }
+
+    .number{
+      margin-top: 7px;
+    }
+
+    .description{
+      margin-top: 5px;
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .component {
+    .features {
+      text-align: left;
+
+      h4 {
+        font-size: 25px;
+      }
+
+      p {
+        font-size: 20px;
+      }
+    }
+  }
+}

@@ -6,6 +6,7 @@
   @include flex(center, center);
 
   a {
+    color:$light;
     text-decoration: none;
 
     &:visited {
@@ -39,8 +40,11 @@
 
   .icon {
     color: $light;
-    &:hover {
-      color: $main-2;
+
+    a {
+        &:hover {
+        color: $main-2;
+      }
     }
   }
 

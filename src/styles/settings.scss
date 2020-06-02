@@ -2,13 +2,15 @@ $header-size: 20px;
 $base-size: 14px;
 
 $dark: #000;
+$grey: #f2f2f2;
 $light: #fff;
-$main-1: #00ffff;
-$main-2: #ff00ff;
-$main-3: #ffff00;
+$main-1: #fb4e68;
+$main-2: #fdb410;
+$main-3: #1ec0b1;
+$main-4: #1188f5;
 
 $font-header: 'Roboto', sans-serif;
-$font-text: 'Source Sans Pro', sans-serif;
+$font-text: 'Roboto', sans-serif;
 
 @mixin flex($align-items, $justify-content) {
   display: flex;

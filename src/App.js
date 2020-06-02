@@ -1,8 +1,8 @@
 import React from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
-// import { Provider } from 'react-redux';
+import { Provider } from 'react-redux';
 
-// import { store } from './redux/store';
+import { store } from './redux/store';
 
 import { MainLayout } from './components/layout/MainLayout/MainLayout';
 import { HomePage } from './components/views/HomePage/HomePage';
@@ -13,7 +13,7 @@ import { NotFound } from './components/views/NotFound/NotFound';
 
 function App() {
   return (
-    // <Provider store={store}>
+    <Provider store={store}>
       <BrowserRouter>
         <MainLayout>
           <Switch>
@@ -25,7 +25,7 @@ function App() {
           </Switch>
         </MainLayout>
       </BrowserRouter>
-    // </Provider>
+    </Provider>
   );
 }
 

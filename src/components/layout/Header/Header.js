@@ -17,24 +17,26 @@ const Component = ({children}) => (
         <Col
           xs
           align="left">
-          <Link to='/'>
-            <div className = {styles.logo}>
+          <div className = {styles.logo}>
+            <Link to='/'>
               <span className={styles.name}>Pantones
                 <sup>
                   &reg;
                 </sup>
               </span>
-            </div>
-          </Link>
+            </Link>
+          </div>
+
         </Col>
         <Col
           xs
           align ="right">
-          <Link to='/cart'>
-            <div className={styles.icon}>
+          <div className={styles.icon}>
+            <Link to='/cart'>
               <Icon name='shopping-cart'/>
-            </div>
-          </Link>
+            </Link>
+          </div>
+
         </Col>
       </Row>
     </Grid>
