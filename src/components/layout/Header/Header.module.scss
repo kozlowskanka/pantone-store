@@ -3,6 +3,8 @@
 .component {
   background-color: $dark;
   min-height: 80px;
+  margin: 0;
+  color:$light;
   @include flex(center, center);
 
   a {
@@ -14,6 +16,7 @@
     }
 
     &:hover {
+      color: $main-3;
       text-decoration: none;
     }
 
@@ -23,33 +26,14 @@
   }
 
   .logo {
-
+    height: 100%;
     color: $light;
+    @include flex (center, left);
 
     .name {
-      color: $light;
       font-family: $font-header;
       font-size: $header-size;
       text-transform: uppercase;
-
-      &:hover {
-        color: $main-3;
-      }
     }
-  }
-
-  .icon {
-    color: $light;
-
-    a {
-        &:hover {
-        color: $main-2;
-      }
-    }
-  }
-
-  .nav {
-    background-color: green;
-    width: 100%;
   }
 }

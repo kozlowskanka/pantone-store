@@ -1,0 +1,18 @@
+@import '../../../styles/settings.scss';
+
+.component {
+  margin-top: 10px;
+  background-color: $dark;
+  color: $light;
+  border: none;
+  padding: 10px;
+
+  &:active {
+    background-color: transparent;
+  }
+
+  &:focus {
+    border: none;
+    outline: none;
+  }
+}

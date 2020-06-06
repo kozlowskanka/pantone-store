@@ -18,14 +18,19 @@ class Component extends React.Component {
     return (
       <div className={styles.component}>
         <Grid>
+          <div className={styles.title}>
+            <h2>Colors</h2>
+          </div>
           <Row
             align ='center'>
             {products.map(pantone => (
+              // eslint-disable-next-line react/jsx-key
               <ProductSummary
-                key = {pantone.id}
-                color = {pantone.color}
-                number ={pantone.number}
-                name ={pantone.name}
+                key={pantone.id}
+                id={pantone.id}
+                color={pantone.color}
+                number={pantone.number}
+                name={pantone.name}
               />
             ))}
           </Row>
@@ -43,14 +48,10 @@ const mapStateToProps = state => ({
   products: getProducts(state),
 });
 
-// const mapDispatchToProps = dispatch => ({
-//   someAction: arg => dispatch(reduxActionCreator(arg)),
-// });
 
 const Container = connect(mapStateToProps)(Component);
 
 export {
-  // Component as Products,
   Container as Products,
   Component as ProductsComponent,
 };

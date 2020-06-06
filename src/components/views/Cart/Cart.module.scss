@@ -1,4 +1,16 @@
 @import '../../../styles/settings.scss';
 
 .component {
+  padding: 0 0 60px 0;
+
+  .title {
+    @include flex (center, center);
+  }
+
+  h2 {
+    background-color: $dark;
+    color: $light;
+    font-size: 40px;
+    padding: 10px;
+  }
 }
