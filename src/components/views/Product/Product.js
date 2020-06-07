@@ -3,13 +3,14 @@ import PropTypes from 'prop-types';
 
 import { connect } from 'react-redux';
 import { getProducts } from '../../../redux/productsRedux.js';
-import { getCart, addToCart } from '../../../redux/cartRedux.js';
+import { getCart, addToCart, removeFromCart } from '../../../redux/cartRedux.js';
 
 import styles from './Product.module.scss';
 
+import Icon from '../../common/Icon/Icon';
 import { Button } from '../../common/Button/Button';
 
-const Component = ({ products, match, addToCart, cart }) => {
+const Component = ({ products, match, cart, addToCart, removeFromCart }) => {
 
   const product = products[match.params.id];
 
@@ -22,18 +23,45 @@ const Component = ({ products, match, addToCart, cart }) => {
   const number = product.number;
   const name = product.name;
 
+  const alreadyInCart = cart.filter(product => product.id === id);
+
+  const handleAddToCart = () => addToCart({
+    id,color,number,name});
+
+  const handleRemoveFromCart = () => {
+    removeFromCart(id);
+  };
+
   return (
     <div
       className={styles.component}
       style={{
         backgroundColor: product.color,
       }}>
-      <h1> {product.name}</h1>
-      <Button onClick = {() => addToCart({
-        id,color,number,name})
-      }>
-        ADD TO CART
-      </Button>
+      <div className={styles.title}>
+        <h1> {product.name}</h1>
+      </div>
+      <div className={styles.action}>
+        {alreadyInCart.length === 0
+          ?
+          <Button
+            variant='dark'
+            onClick = {handleAddToCart}
+          >
+            ADD TO CART
+          </Button>
+          :
+          <div>
+            PANTONE is already in your cart
+            <Button
+              variant='transparent'
+              onClick={handleRemoveFromCart}
+            >
+              <Icon name='trash'/>
+            </Button>
+          </div>
+        }
+      </div>
     </div>
   );
 };
@@ -47,6 +75,7 @@ Component.propTypes = {
     }),
   }),
   addToCart: PropTypes.func,
+  removeFromCart: PropTypes.func,
 };
 
 const mapStateToProps = state => ({
@@ -56,9 +85,8 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
   addToCart: (id, color, number, name) => dispatch(addToCart(id, color, number, name)),
+  removeFromCart: id => dispatch(removeFromCart(id)),
 });
-
-// const Container = connect(mapStateToProps)(Component);
 
 const Container = connect(mapStateToProps, mapDispatchToProps)(Component);
 

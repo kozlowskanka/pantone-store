@@ -2,7 +2,7 @@
 
 .component {
   width: 100%;
-  height: calc(100vh - 160px);
+  min-height: calc(100vh - 160px);
   @include flex (center, center);
   flex-direction: column;
 
@@ -12,5 +12,9 @@
 
   .add {
     margin-top: 20px;
+  }
+
+  .action {
+    margin-top: 10px;
   }
 }

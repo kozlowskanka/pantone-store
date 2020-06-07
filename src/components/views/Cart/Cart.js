@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import { connect } from 'react-redux';
-
 import { getCart } from '../../../redux/cartRedux.js';
 
 import styles from './Cart.module.scss';
@@ -53,7 +52,6 @@ const mapStateToProps = state => ({
 const Container = connect(mapStateToProps)(Component);
 
 export {
-  // Component as Cart,
   Container as Cart,
   Component as CartComponent,
 };

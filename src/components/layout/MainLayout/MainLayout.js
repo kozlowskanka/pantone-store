@@ -6,8 +6,9 @@ import PropTypes from 'prop-types';
 
 import styles from './MainLayout.module.scss';
 
-import {Header} from '../Header/Header';
-import {Footer} from '../Footer/Footer';
+import { Header } from '../Header/Header';
+import { Footer } from '../Footer/Footer';
+import { Cookies } from '../../features/Cookies/Cookies';
 
 const Component = ({children}) => (
   <div className = {styles.component}>
@@ -16,6 +17,7 @@ const Component = ({children}) => (
       {children}
     </main>
     <Footer/>
+    <Cookies/>
   </div>
 );
 

@@ -1,18 +1,36 @@
 import React from 'react';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 
 import styles from './Button.module.scss';
 
-const Component = ({...otherProps}) => (
-  <button
-    {...otherProps}
-    className={styles.component}
-  />
-);
+class Component extends React.Component {
+  render() {
+    const {
+      children,
+      variant,
+      ...props
+    } = this.props;
 
-// Component.propTypes = {
+    const classes = [];
 
-// };
+    if (variant) classes.push(styles[variant]);
+    else classes.push('main');
+
+    return (
+      <button
+        className={classes.join(' ')}
+        {...props}
+      >
+        {children}
+      </button>
+    );
+  }
+}
+
+Component.propTypes = {
+  children: PropTypes.node,
+  variant: PropTypes.string,
+};
 
 export {
   Component as Button,

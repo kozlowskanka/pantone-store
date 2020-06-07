@@ -1,7 +1,6 @@
 @import '../../../styles/settings.scss';
 
-.component {
-  margin-top: 10px;
+.dark {
   background-color: $dark;
   color: $light;
   border: none;
@@ -9,6 +8,23 @@
 
   &:active {
     background-color: transparent;
+    color: $dark;
+  }
+
+  &:focus {
+    border: none;
+    outline: none;
+  }
+}
+
+.transparent {
+  background-color: transparent;
+  color: $dark;
+  border: none;
+  padding: 10px;
+
+  &:active {
+    color: transparent;
   }
 
   &:focus {
