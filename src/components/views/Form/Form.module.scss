@@ -1,4 +1,29 @@
 @import '../../../styles/settings.scss';
 
 .component {
+  width: 100%;
+  min-height: calc(100vh - 160px);
+  padding: 0 0 60px 0;
+
+  .formLine {
+    margin-bottom: 20px;
+  }
+
+  label {
+    margin-bottom: 5px;
+    font-size: 20px;
+  }
+
+  input {
+    width: 100%;
+    background-color: $main-1;
+    color: $light;
+    font-size: 18px;
+    padding: 5px;
+  }
+
+  .submit {
+    @include flex (center, center);
+  }
 }
+

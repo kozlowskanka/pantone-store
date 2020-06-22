@@ -31,7 +31,7 @@ const Component = () => (
       ))}
     </div>
     <div className={styles.overlay}>
-      <h1>Choose your color</h1>
+      <h1>Choose<br/> your<br/> favourite <br/> colors</h1>
     </div>
   </div>
 );

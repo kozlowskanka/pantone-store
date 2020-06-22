@@ -22,11 +22,12 @@ const Component = ({ products, match, cart, addToCart, removeFromCart }) => {
   const color = product.color;
   const number = product.number;
   const name = product.name;
+  const price = product.price;
 
   const alreadyInCart = cart.filter(product => product.id === id);
 
   const handleAddToCart = () => addToCart({
-    id,color,number,name});
+    id,color,number,name, price});
 
   const handleRemoveFromCart = () => {
     removeFromCart(id);
@@ -39,7 +40,7 @@ const Component = ({ products, match, cart, addToCart, removeFromCart }) => {
         backgroundColor: product.color,
       }}>
       <div className={styles.title}>
-        <h1> {product.name}</h1>
+        <h1> {name} / </h1> <h3>&nbsp; {price}$ </h3>
       </div>
       <div className={styles.action}>
         {alreadyInCart.length === 0
@@ -52,7 +53,7 @@ const Component = ({ products, match, cart, addToCart, removeFromCart }) => {
           </Button>
           :
           <div>
-            PANTONE is already in your cart
+            This PANTONE is already in your cart
             <Button
               variant='transparent'
               onClick={handleRemoveFromCart}
@@ -84,7 +85,7 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  addToCart: (id, color, number, name) => dispatch(addToCart(id, color, number, name)),
+  addToCart: (id, color, number, name, price) => dispatch(addToCart(id, color, number, name, price)),
   removeFromCart: id => dispatch(removeFromCart(id)),
 });
 

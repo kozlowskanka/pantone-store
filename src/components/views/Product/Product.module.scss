@@ -17,4 +17,8 @@
   .action {
     margin-top: 10px;
   }
+
+  .title {
+    @include flex (center, center);
+  }
 }

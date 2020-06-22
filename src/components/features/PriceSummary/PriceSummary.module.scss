@@ -1,0 +1,30 @@
+@import '../../../styles/settings.scss';
+
+.component {
+  @include flex (center, center);
+
+  a {
+    text-decoration: none;
+  }
+
+  div {
+    margin-top: 30px;
+    color: $light;
+    font-size: 30px;
+    padding: 10px;
+  }
+
+  .price {
+    background-color: $main-3;
+    margin-right: 5px;
+  }
+
+  .order {
+    background-color: $dark;
+    margin-left: 5px;
+
+    &:hover {
+      background-color: $main-1;
+    }
+  }
+}

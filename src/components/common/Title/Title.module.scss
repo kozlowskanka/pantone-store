@@ -1,0 +1,12 @@
+@import '../../../styles/settings.scss';
+
+.component {
+  @include flex (center, center);
+
+  h2 {
+    background-color: $dark;
+    color: $light;
+    font-size: 40px;
+    padding: 10px;
+  }
+}

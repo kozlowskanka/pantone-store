@@ -2,13 +2,13 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import { connect } from 'react-redux';
-
 import { getProducts } from '../../../redux/productsRedux.js';
 
 import styles from './Products.module.scss';
 import { Grid, Row } from 'react-flexbox-grid';
 
 import { ProductSummary } from '../../features/ProductSummary/ProductSummary';
+import { Title } from '../../common/Title/Title';
 
 class Component extends React.Component {
 
@@ -18,9 +18,7 @@ class Component extends React.Component {
     return (
       <div className={styles.component}>
         <Grid>
-          <div className={styles.title}>
-            <h2>Colors</h2>
-          </div>
+          <Title name='Available colors'/>
           <Row
             align ='center'>
             {products.map(pantone => (
@@ -31,6 +29,7 @@ class Component extends React.Component {
                 color={pantone.color}
                 number={pantone.number}
                 name={pantone.name}
+                price={pantone.price}
               />
             ))}
           </Row>

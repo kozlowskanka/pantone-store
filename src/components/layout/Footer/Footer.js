@@ -4,41 +4,31 @@ import PropTypes from 'prop-types';
 import styles from './Footer.module.scss';
 
 import { Grid, Row, Col } from 'react-flexbox-grid';
+import { RandomPantone } from '../../features/RandomPantone/RandomPantone';
 
-const Component = ({children}) => (
-  <footer className={styles.component}>
-    <Grid>
-      <Row>
-        <Col
-          xs
-          align="left">
-          <div>
-            1 blok
-          </div>
+class Component extends React.Component {
 
-        </Col>
-        <Col
-          xs
-          align ="center">
-          <div>
-            2 blok
-          </div>
-        </Col>
-        <Col
-          xs
-          align ="right">
-          <div>
-            3 blok
-          </div>
-        </Col>
-      </Row>
-    </Grid>
-  </footer>
-);
+  render() {
+    return (
+      <footer className={styles.component}>
+        <Grid>
+          <Row>
+            <Col
+              xs
+              align ="center">
+              <RandomPantone/>
+            </Col>
+          </Row>
+        </Grid>
+      </footer>
+    );
+  }
+}
 
 Component.propTypes = {
-  children: PropTypes.node,
+  products: PropTypes.array,
 };
+
 
 export {
   Component as Footer,

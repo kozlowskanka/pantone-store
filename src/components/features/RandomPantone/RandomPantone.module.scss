@@ -1,0 +1,9 @@
+@import '../../../styles/settings.scss';
+
+.component {
+  p {
+    color: $light;
+    font-family: $font-header;
+    font-size: 20px;
+  }
+}

@@ -6,6 +6,7 @@
   margin: 0;
   color:$light;
   @include flex(center, center);
+  z-index: 2;
 
   a {
     color:$light;
