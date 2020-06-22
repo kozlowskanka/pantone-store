@@ -11,7 +11,6 @@ const createActionName = name => `app/${reducerName}/${name}`;
 const FETCH_START = createActionName('FETCH_START');
 const FETCH_SUCCESS = createActionName('FETCH_SUCCESS');
 const FETCH_ERROR = createActionName('FETCH_ERROR');
-const FETCH_PRODUCTS = createActionName('FETCH_PRODUCTS');
 
 /* action creators */
 export const fetchStarted = payload => ({ payload, type: FETCH_START });
@@ -42,36 +41,19 @@ export const reducer = (statePart = [], action = {}) => {
     case FETCH_START: {
       return {
         ...statePart,
-        loading: {
-          active: true,
-          error: false,
-        },
       };
     }
     case FETCH_SUCCESS: {
       return {
         ...statePart,
-        loading: {
-          active: false,
-          error: false,
-        },
         data: action.payload,
       };
     }
     case FETCH_ERROR: {
       return {
         ...statePart,
-        loading: {
-          active: false,
-          error: action.payload,
-        },
       };
     }
-    case FETCH_PRODUCTS:
-      return {
-        ...statePart,
-        data: [...action.payload],
-      };
     default:
       return statePart;
   }
