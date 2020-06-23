@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import styles from './Footer.module.scss';
 
 import { Grid, Row, Col } from 'react-flexbox-grid';
-import { RandomPantone } from '../../features/RandomPantone/RandomPantone';
+// import { RandomPantone } from '../../features/RandomPantone/RandomPantone';
 
 class Component extends React.Component {
 
@@ -16,7 +16,7 @@ class Component extends React.Component {
             <Col
               xs
               align ="center">
-              <RandomPantone/>
+              {/* <RandomPantone/> */}
             </Col>
           </Row>
         </Grid>
