@@ -4,6 +4,7 @@ const path = require('path');
 const mongoose = require('mongoose');
 
 const productsRoutes = require('./routes/products.routes');
+const orderRoutes = require('./routes/orders.routes');
 
 const app = express();
 
@@ -14,6 +15,7 @@ app.use(express.urlencoded({ extended: false }));
 
 /* API ENDPOINTS */
 app.use('/api', productsRoutes);
+app.use('/api', orderRoutes);
 
 /* API ERROR PAGES */
 app.use('/api', (req, res) => {
@@ -25,6 +27,12 @@ app.use(express.static(path.join(__dirname, '../build')));
 app.use('*', (req, res) => {
   res.sendFile(path.join(__dirname, '../build/index.html'));
 });
+
+// app.use(express.static(path.join(__dirname, '../src')));
+// app.use('*', (req, res) => {
+//   res.sendFile(path.join(__dirname, '../src/index.js'));
+// });
+
 
 /* MONGOOSE */
 // mongoose.connect('mongodb://localhost:27017/bulletinBoard', { useNewUrlParser: true, useUnifiedTopology: true });

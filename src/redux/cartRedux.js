@@ -1,4 +1,4 @@
-// import Axios from 'axios';
+import Axios from 'axios';
 
 /* selectors */
 export const getCart = ({ cart }) => cart;
@@ -24,6 +24,21 @@ export const addToCart = payload => ({ payload, type: ADD_TO_CART });
 export const removeFromCart = payload => ({ payload, type: REMOVE_FROM_CART });
 
 /* thunk creators */
+
+export const saveOrder = (order) => {
+  return (dispatch, getState) => {
+    // dispatch(fetchStarted());
+
+    Axios
+      .post('http://localhost:8000/api/orders', order)
+      .then(res => {
+        console.log(':: get response');
+      })
+      .catch(err => {
+        console.log(':: error');
+      });
+  };
+};
 
 /* reducer */
 export const reducer = (statePart = [], action = {}) => {

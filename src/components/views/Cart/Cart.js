@@ -10,14 +10,11 @@ import { Grid, Row } from 'react-flexbox-grid';
 import { ProductSummary } from '../../features/ProductSummary/ProductSummary';
 import { Title } from '../../common/Title/Title';
 import { PriceSummary } from '../../features/PriceSummary/PriceSummary';
-// import { sumPrice } from '../../../utils/sumPrice';
 
 class Component extends React.Component {
 
   render() {
     const { cart } = this.props;
-
-    // const price = sumPrice(cart, 'price');
 
     return (
       <div className={styles.component}>
@@ -25,7 +22,6 @@ class Component extends React.Component {
           <Title name='Your colors'/>
           <Row className={styles.colors}>
             {cart.map(pantone => (
-              // eslint-disable-next-line react/jsx-key
               <ProductSummary
                 key={pantone.id}
                 id={pantone.id}

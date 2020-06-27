@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import { connect } from 'react-redux';
-import { getProducts, fetchProducts } from '../../../redux/productsRedux.js';
+import { getProducts, fetchInStockProducts } from '../../../redux/productsRedux.js';
 
 import styles from './Products.module.scss';
 import { Grid, Row } from 'react-flexbox-grid';
@@ -28,14 +28,13 @@ class Component extends React.Component {
           <Row
             align ='center'>
             {products.map((pantone) => (
-              // eslint-disable-next-line react/jsx-key
               <ProductSummary
                 color={pantone.color}
                 number={pantone.number}
                 name={pantone.name}
                 price={pantone.price}
-                key={pantone.id}
-                id={pantone.id}
+                key={pantone._id}
+                id={pantone._id}
               />
             ))}
           </Row>
@@ -55,7 +54,7 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  fetchProducts: () => dispatch(fetchProducts()),
+  fetchProducts: () => dispatch(fetchInStockProducts()),
 });
 
 const Container = connect(mapStateToProps, mapDispatchToProps)(Component);

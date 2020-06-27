@@ -10,62 +10,66 @@ import styles from './Product.module.scss';
 import Icon from '../../common/Icon/Icon';
 import { Button } from '../../common/Button/Button';
 
-const Component = ({ products, match, cart, addToCart, removeFromCart }) => {
+class Component extends React.Component {
 
-  const product = products[match.params.id];
+  render () {
+    const { products, match, cart, addToCart, removeFromCart } = this.props;
 
-  console.log ('products', products);
-  console.log ('product', product);
-  console.log ('cart', cart);
+    console.log('products in Product', products);
 
-  const id = product.id;
-  const color = product.color;
-  const number = product.number;
-  const name = product.name;
-  const price = product.price;
+    const product = products.find(product => product._id === match.params.id);
+    // const product = products[match.params.id];
+    console.log('product in Product', product);
 
-  const alreadyInCart = cart.filter(product => product.id === id);
+    const id = product._id;
+    const color = product.color;
+    const number = product.number;
+    const name = product.name;
+    const price = product.price;
 
-  const handleAddToCart = () => addToCart({
-    id,color,number,name, price});
+    const alreadyInCart = cart.filter(product => product.id === id);
 
-  const handleRemoveFromCart = () => {
-    removeFromCart(id);
-  };
+    const handleAddToCart = () => addToCart({
+      id,color,number,name, price});
 
-  return (
-    <div
-      className={styles.component}
-      style={{
-        backgroundColor: product.color,
-      }}>
-      <div className={styles.title}>
-        <h1> {name} / </h1> <h3>&nbsp; {price}$ </h3>
-      </div>
-      <div className={styles.action}>
-        {alreadyInCart.length === 0
-          ?
-          <Button
-            variant='dark'
-            onClick = {handleAddToCart}
-          >
-            ADD TO CART
-          </Button>
-          :
-          <div>
-            This PANTONE is already in your cart
+    const handleRemoveFromCart = () => {
+      removeFromCart(id);
+    };
+
+    return (
+      <div
+        className={styles.component}
+        style={{
+          backgroundColor: color,
+        }}>
+        <div className={styles.title}>
+          <h1> {name} / </h1> <h3>&nbsp; {price}$ </h3>
+        </div>
+        <div className={styles.action}>
+          {alreadyInCart.length === 0
+            ?
             <Button
-              variant='transparent'
-              onClick={handleRemoveFromCart}
+              variant='dark'
+              onClick = {handleAddToCart}
             >
-              <Icon name='trash'/>
+                ADD TO CART
             </Button>
-          </div>
-        }
+            :
+            <div>
+                This PANTONE is already in your cart
+              <Button
+                variant='transparent'
+                onClick={handleRemoveFromCart}
+              >
+                <Icon name='trash'/>
+              </Button>
+            </div>
+          }
+        </div>
       </div>
-    </div>
-  );
-};
+    );
+  }
+}
 
 Component.propTypes = {
   products: PropTypes.array,

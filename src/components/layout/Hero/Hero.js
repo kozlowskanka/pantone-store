@@ -21,7 +21,6 @@ const Component = () => (
   <div className={styles.component}>
     <div className={styles.colors}>
       {backgrounds.map(background => (
-      // eslint-disable-next-line react/jsx-key
         <div
           className={styles.stripe}
           style={{

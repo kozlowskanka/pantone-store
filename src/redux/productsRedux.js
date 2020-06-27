@@ -18,7 +18,7 @@ export const fetchSuccess = payload => ({ payload, type: FETCH_SUCCESS });
 export const fetchError = payload => ({ payload, type: FETCH_ERROR });
 
 /* thunk creators */
-export const fetchProducts = () => {
+export const fetchInStockProducts = () => {
   return (dispatch, getState) => {
     dispatch(fetchStarted());
 
