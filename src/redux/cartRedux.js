@@ -1,4 +1,5 @@
 import Axios from 'axios';
+import { API_URL } from '../config';
 
 /* selectors */
 export const getCart = ({ cart }) => cart;
@@ -26,11 +27,10 @@ export const removeFromCart = payload => ({ payload, type: REMOVE_FROM_CART });
 /* thunk creators */
 
 export const saveOrder = (order) => {
-  return (dispatch, getState) => {
-    // dispatch(fetchStarted());
+  return () => {
 
     Axios
-      .post('http://localhost:8000/api/orders', order)
+      .post(`${API_URL}/orders`, order)
       .then(res => {
         console.log(':: get response');
       })

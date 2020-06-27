@@ -1,4 +1,5 @@
 import Axios from 'axios';
+import { API_URL } from '../config';
 
 /* selectors */
 export const getProducts = ({products}) => products.data;
@@ -23,7 +24,7 @@ export const fetchInStockProducts = () => {
     dispatch(fetchStarted());
 
     Axios
-      .get('http://localhost:8000/api/products')
+      .get(`${API_URL}/products`)
       .then(res => {
         dispatch(fetchSuccess(res.data));
         console.log('res data', res.data);

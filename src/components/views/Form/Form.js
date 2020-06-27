@@ -39,7 +39,6 @@ const Component = ({cart, saveOrder}) => {
     <div className={styles.component}>
       <Grid>
         <Title name='Order details'/>
-        {/* <Row className={styles.form}> */}
         <form onSubmit={e => handleSubmit(e)}>
           <Row className={styles.formLine}>
             <Col className={styles.label} xs={12}>
@@ -130,7 +129,6 @@ const mapDispatchToProps = dispatch => ({
 const Container = connect(mapStateToProps, mapDispatchToProps)(Component);
 
 export {
-  // Component as Form,
   Container as Form,
   Component as FormComponent,
 };
