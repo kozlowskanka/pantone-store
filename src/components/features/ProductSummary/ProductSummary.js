@@ -14,8 +14,6 @@ class Component extends React.Component {
   render () {
     const { id, color, number, name, price } = this.props;
 
-    console.log ('id',id);
-
     return (
       <Col align="center" xs={12} lg={2} md={3} className={styles.component}>
         <Link to={`/product/${id}`}>
