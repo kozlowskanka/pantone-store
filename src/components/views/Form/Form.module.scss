@@ -4,26 +4,37 @@
   width: 100%;
   min-height: calc(100vh - 160px);
   padding: 0 0 60px 0;
+  background-color: $main-1;
 
   .formLine {
-    margin-bottom: 20px;
+    margin-bottom: 30px;
   }
 
   label {
-    margin-bottom: 5px;
     font-size: 20px;
+    color: $light;
+    background-color: $dark;
+    padding: 5px;
   }
 
   input {
+    margin-top: 10px;
     width: 100%;
-    background-color: $main-1;
-    color: $light;
+    background-color: $light;
+    color: $dark;
     font-size: 18px;
     padding: 5px;
   }
 
   .submit {
     @include flex (center, center);
+  }
+
+  .info {
+    width: 100%;
+    @include flex (center,center);
+    flex-direction: column;
+
   }
 }
 
