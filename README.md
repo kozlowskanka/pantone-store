@@ -1,7 +1,7 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## link
-https://pantonestore-42faa.web.app/
+https://pantonestore.herokuapp.com/
 
 ## Available Scripts
 
